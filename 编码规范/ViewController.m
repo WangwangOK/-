@@ -7,8 +7,21 @@
 //
 
 #import "ViewController.h"
+//枚举的多种定义方式
+typedef NS_ENUM(NSInteger, OtherType) {
+    OtherTypeOne,
+    OtherTypeTwo,
+    OtherTypeThree,
+};
+typedef enum:NSInteger{
+    MenuTypeFirst = 0,
+    MenuTypeSecond = 1,
+    MenuTypeThird = 2,
+}MenuType;
 
 @interface ViewController ()
+
+
 
 @end
 
@@ -16,7 +29,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //推荐命名方式
+    UIButton *settingButton;
+    //不推荐方式
+    UIButton *setBut;
+    
+    
+    MenuType type = MenuTypeFirst;
+    switch (type) {
+        case MenuTypeFirst:
+            NSLog(@"First");
+            break;
+        case MenuTypeSecond:
+            NSLog(@"Second");
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
